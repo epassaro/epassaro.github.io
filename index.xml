@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ezequiel Pássaro</title><link>/</link><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><description>Ezequiel Pássaro</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020</copyright><lastBuildDate>Fri, 28 Aug 2020 21:04:01 -0300</lastBuildDate><image><url>/img/icon-192.png</url><title>Ezequiel Pássaro</title><link>/</link></image><item><title>Google Summer of Code 2020</title><link>/post/gsoc20/</link><pubDate>Fri, 28 Aug 2020 21:04:01 -0300</pubDate><guid>/post/gsoc20/</guid><description>&lt;p>Project
+&lt;a href="https://summerofcode.withgoogle.com/projects/#6530109852352512" target="_blank" rel="noopener">“Comparing TARDIS spectra generated with different atomic data sources”&lt;/a> for the
+&lt;a href="https://tardis-sn.github.io/tardis" target="_blank" rel="noopener">TARDIS-SN&lt;/a> collaboration, mentored by &lt;strong>Andreas Flörs&lt;/strong>, &lt;strong>Christian Vogl&lt;/strong> and &lt;strong>James Gillanders&lt;/strong>.&lt;/p>
+&lt;hr>
+&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>TARDIS relies on Carsus to manage the atomic data necessary to run the simulations. These data comes from a wide variety of sources (laboratories) and measurements of the same quantity usually differ depending on the source.&lt;/p>
+&lt;p>Through my second year as a Google Summer of Code student I made several contributions to improve the Carsus package. These
+contributions can be summarized in the following way:&lt;/p>
+&lt;h3 id="1-metadata-for-atomic-files-183httpsgithubcomtardis-sncarsuspull183">1. Metadata for atomic files (
+&lt;a href="https://github.com/tardis-sn/carsus/pull/183" target="_blank" rel="noopener">#183&lt;/a>)&lt;/h3>
+&lt;p>Reproducibility of scientific results is a must. We wanted to store all the necessary information needed to reproduce our atomic data files at any point in the future.&lt;/p>
+&lt;p>The main challenge was to find a convenient way to serialize Pandas&amp;rsquo;s objects (we chose PyArrow) and then calculate a checksum for every &lt;em>DataFrame&lt;/em> stored in the atomic data file.&lt;/p>
+&lt;p>Finally the metadata is completed with a global checksum for the entire file, an universally unique identifier (UUID1), and versions of relevant packages and datasets.&lt;/p>
+&lt;h3 id="2-fix-for-heavy-elements-189httpsgithubcomtardis-sncarsuspull189">2. Fix for heavy elements (
+&lt;a href="https://github.com/tardis-sn/carsus/pull/189" target="_blank" rel="noopener">#189&lt;/a>)&lt;/h3>
+&lt;p>Missing total angular momentum (&lt;em>&amp;ldquo;j&amp;rdquo;&lt;/em>) for some ground levels obtained from the NIST Atomic Spectra Database limited the usage of Carsus to species with atomic number (Z) lower than 59 [&lt;strong>Pr&lt;/strong>].&lt;/p>
+&lt;p>A small but critical patch made in collaboration with Stuart Sim allows Carsus to ingest atomic data from heavy elements.&lt;/p>
+&lt;h3 id="3-collision-strengths-from-chianti-db-190httpsgithubcomtardis-sncarsuspull183">3. Collision strengths from Chianti DB (
+&lt;a href="https://github.com/tardis-sn/carsus/pull/183" target="_blank" rel="noopener">#190&lt;/a>)&lt;/h3>
+&lt;p>The last piece of atomic data needed to fully replace the old Carsus SQL interface (&lt;em>&amp;ldquo;legacy&amp;rdquo;&lt;/em>) were the collision strengths from Chianti.&lt;/p>
+&lt;h3 id="4-energy-levels-and-lines-from-cmfgen-191httpsgithubcomtardis-sncarsuspull191">4. Energy levels and lines from CMFGEN (
+&lt;a href="https://github.com/tardis-sn/carsus/pull/191" target="_blank" rel="noopener">#191&lt;/a>)&lt;/h3>
+&lt;p>My GSoC 2019 project involved writing parsers for CMFGEN files. This year I wrote the code necessary to ingest energy levels and transition lines from this database into the atomic files.&lt;/p>
+&lt;p>This action required a complete refactor of the Carsus output module, including a full revision of the priority management system.&lt;/p>
+&lt;br>
+&lt;h2 id="whats-left-to-do">What&amp;rsquo;s left to do?&lt;/h2>
+&lt;p>Nothing.&lt;/p>
+&lt;br>
+&lt;h2 id="final-thoughts">Final thoughts&lt;/h2>
+&lt;p>It has been an amazing two years journey. I look forward to continue contributing to TARDIS and other open source projects as well.&lt;/p>
+&lt;br>
+&lt;h2 id="see-also">See also&lt;/h2>
+&lt;ul>
+&lt;li>Documentation &amp;ndash;
+&lt;a href="https://tardis-sn.github.io/carsus" target="_blank" rel="noopener">https://tardis-sn.github.io/carsus&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>A complete list of PRs made during the entire GSoC 2020 period can be found
+&lt;a href="https://github.com/pulls?q=is%3Apr&amp;#43;created%3A2020-05-04..2020-08-31&amp;#43;author%3Aepassaro&amp;#43;user%3Atardis-sn" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
+&lt;/blockquote></description></item><item><title>COVID-19 Daily Update</title><link>/project/covid-19/</link><pubDate>Wed, 01 Apr 2020 20:43:00 -0300</pubDate><guid>/project/covid-19/</guid><description/></item><item><title>Lands of Buenos Aires</title><link>/project/ba-lands/</link><pubDate>Fri, 21 Feb 2020 16:52:08 -0300</pubDate><guid>/project/ba-lands/</guid><description/></item><item><title>An open source framework for atomic data</title><link>/publication/aaa2019/</link><pubDate>Sun, 15 Sep 2019 16:55:25 -0300</pubDate><guid>/publication/aaa2019/</guid><description/></item></channel></rss>
