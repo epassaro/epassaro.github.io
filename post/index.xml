@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | Ezequiel Pássaro</title><link>/post/</link><atom:link href="/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2019-2025</copyright><lastBuildDate>Fri, 03 May 2024 21:04:01 -0300</lastBuildDate><image><url>/img/icon-192.png</url><title>Posts</title><link>/post/</link></image><item><title>Follow Me on DEV!</title><link>/post/follow-me-on-dev/</link><pubDate>Fri, 03 May 2024 21:04:01 -0300</pubDate><guid>/post/follow-me-on-dev/</guid><description>&lt;blockquote>
+&lt;p>Hey there! I’m not very active here, so you can follow me on
+&lt;a href="https://dev.to/epassaro" target="_blank" rel="noopener">dev.to/epassaro&lt;/a>, where there&amp;rsquo;s a great community! I&amp;rsquo;ve found it to be a fantastic place to connect with fellow developers and share insights on various tech topics.&lt;/p>
+&lt;/blockquote>
+&lt;hr></description></item><item><title>The End of Google Summer of Code</title><link>/post/gsoc20/</link><pubDate>Fri, 28 Aug 2020 21:04:01 -0300</pubDate><guid>/post/gsoc20/</guid><description>&lt;blockquote>
+&lt;p>Project
+&lt;a href="https://summerofcode.withgoogle.com/projects/#6530109852352512" target="_blank" rel="noopener">“Comparing TARDIS spectra generated with different atomic data sources”&lt;/a> for the
+&lt;a href="https://tardis-sn.github.io" target="_blank" rel="noopener">TARDIS-SN&lt;/a> organization, and mentored by &lt;strong>Andreas Flörs&lt;/strong>, &lt;strong>Christian Vogl&lt;/strong>, and &lt;strong>James Gillanders&lt;/strong>.&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>Through my second (and last) year as a &lt;strong>Google Summer of Code&lt;/strong> student, I made several contributions to improve the Carsus package.&lt;/p>
+&lt;p>&lt;strong>TARDIS&lt;/strong> relies on Carsus to manage the atomic data necessary to run the simulations. These data comes from a wide variety of sources (experiments) and measurements of the same quantity may differ depending on the source.&lt;/p>
+&lt;blockquote>
+&lt;p>A complete list of PRs made during the entire GSoC 2020 period can be found
+&lt;a href="https://github.com/pulls?q=is%3Apr&amp;#43;created%3A2020-05-04..2020-08-31&amp;#43;author%3Aepassaro&amp;#43;user%3Atardis-sn" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="1-metadata-for-atomic-files-pr-183httpsgithubcomtardis-sncarsuspull183">1. Metadata for atomic files (PR
+&lt;a href="https://github.com/tardis-sn/carsus/pull/183" target="_blank" rel="noopener">#183&lt;/a>)&lt;/h3>
+&lt;p>Reproducibility of scientific results is a must. We wanted to store all the information
+required to reproduce our atomic data files at any point in the future.&lt;/p>
+&lt;p>The main challenge was to find a convenient way to serialize Pandas&amp;rsquo;s objects (we chose PyArrow) and then calculate a checksum for every DataFrame stored in the atomic data file.&lt;/p>
+&lt;p>Then, we store these checksumns and versions of relevant packageas and datasets.&lt;/p>
+&lt;p>Finally, the atomic file is signed with a global checksum and a universally unique identifier (UUID1).&lt;/p>
+&lt;h3 id="2-fix-for-heavy-elements-pr-189httpsgithubcomtardis-sncarsuspull189">2. Fix for heavy elements (PR
+&lt;a href="https://github.com/tardis-sn/carsus/pull/189" target="_blank" rel="noopener">#189&lt;/a>)&lt;/h3>
+&lt;p>Missing total angular momentum (&lt;em>&amp;ldquo;j&amp;rdquo;&lt;/em>) for some ground levels obtained from the NIST Atomic Spectra Database limited the usage of Carsus to species with atomic number (Z) lower than 59 [&lt;strong>Pr&lt;/strong>].&lt;/p>
+&lt;p>A small but critical patch made in collaboration with Stuart Sim allows Carsus to ingest atomic data from heavy elements.&lt;/p>
+&lt;h3 id="3-collision-strengths-from-chianti-db-pr-190httpsgithubcomtardis-sncarsuspull183">3. Collision strengths from Chianti DB (PR
+&lt;a href="https://github.com/tardis-sn/carsus/pull/183" target="_blank" rel="noopener">#190&lt;/a>)&lt;/h3>
+&lt;p>The last piece of atomic data needed to fully replace the old Carsus SQL interface (&lt;em>&amp;ldquo;legacy&amp;rdquo;&lt;/em>) were the collision strengths from Chianti.&lt;/p>
+&lt;h3 id="4-energy-levels-and-lines-from-cmfgen-pr-191httpsgithubcomtardis-sncarsuspull191">4. Energy levels and lines from CMFGEN (PR
+&lt;a href="https://github.com/tardis-sn/carsus/pull/191" target="_blank" rel="noopener">#191&lt;/a>)&lt;/h3>
+&lt;p>My
+&lt;a href="https://summerofcode.withgoogle.com/archive/2019/projects/5344591031566336" target="_blank" rel="noopener">GSoC 2019 project&lt;/a> involved writing parsers for CMFGEN files. This year, I wrote the code necessary to ingest energy levels and transition lines from this database into TARDIS atomic files.&lt;/p>
+&lt;p>This action required a complete refactor of the Carsus output module, including a complete revision of the priority management of the data sources.&lt;/p>
+&lt;br>
+&lt;h2 id="whats-left-to-do">What&amp;rsquo;s left to do?&lt;/h2>
+&lt;p>Nothing.&lt;/p>
+&lt;br>
+&lt;h2 id="final-thoughts">Final thoughts&lt;/h2>
+&lt;p>My plans for 2020 were really different to be honest. I wasn&amp;rsquo;t sure about to apply for Google Summer of Code again. But, in March I knew that this year was going to be &amp;ldquo;special&amp;rdquo;.&lt;/p>
+&lt;p>And boy it was crazy. As an inhabitant of the southern hemisphere, GSoC passed during a long,
+long winter. I was grateful to have something to work on in these difficult times.&lt;/p>
+&lt;p>It has been an amazing two years journey. GSoC was a life-changing event for me, without any doubt. It happened at the right time, after some difficult years.&lt;/p>
+&lt;p>What&amp;rsquo;s next? I&amp;rsquo;m glad to say that I joined this fantastic organization and I will contributing to TARDIS-SN as long as possible.&lt;/p>
+&lt;br>
+&lt;h2 id="see-also">See also&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;a href="https://summerofcode.withgoogle.com/archive/2020/projects/5301481479077888" target="_blank" rel="noopener">GSoC 2021 - Project&amp;rsquo;s Page&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="https://epassaro.github.io/gsoc19/" target="_blank" rel="noopener">GSoC 2020 - Final Evaluation&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="https://tardis-sn.github.io/carsus" target="_blank" rel="noopener">Carsus&amp;rsquo;s Package Documentation&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
